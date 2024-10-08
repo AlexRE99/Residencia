@@ -10,6 +10,7 @@ import { DetallesGeneralesModule } from './detalles_generales/detalles_generales
 import { DireccionesMacModule } from './direcciones_mac/direcciones_mac.module';
 import { PerfilComponentesModule } from './perfil_componentes/perfil_componentes.module';
 import { EtiquetasModule } from './etiquetas/etiquetas.module';
+import { PuertosModule } from './puertos/puertos.module';
 
 @Module({
   imports: [
@@ -34,7 +35,8 @@ import { EtiquetasModule } from './etiquetas/etiquetas.module';
     DetallesGeneralesModule,
     DireccionesMacModule,
     PerfilComponentesModule,
-    EtiquetasModule
+    EtiquetasModule,
+    PuertosModule
   ],
   controllers: [AppController],
   providers: [AppService],
