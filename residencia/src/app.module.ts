@@ -11,6 +11,12 @@ import { DireccionesMacModule } from './direcciones_mac/direcciones_mac.module';
 import { PerfilComponentesModule } from './perfil_componentes/perfil_componentes.module';
 import { EtiquetasModule } from './etiquetas/etiquetas.module';
 import { PuertosModule } from './puertos/puertos.module';
+import { InformaciónRedesModule } from './información_redes/información_redes.module';
+import { AsignacionesModule } from './asignaciones/asignaciones.module';
+import { PropiedadModule } from './propiedad/propiedad.module';
+import { AreaModule } from './area/area.module';
+import { RolesModule } from './roles/roles.module';
+import { UsuarioRolModule } from './usuario_rol/usuario_rol.module';
 
 @Module({
   imports: [
@@ -36,7 +42,13 @@ import { PuertosModule } from './puertos/puertos.module';
     DireccionesMacModule,
     PerfilComponentesModule,
     EtiquetasModule,
-    PuertosModule
+    PuertosModule,
+    InformaciónRedesModule,
+    AsignacionesModule,
+    PropiedadModule,
+    AreaModule,
+    RolesModule,
+    UsuarioRolModule
   ],
   controllers: [AppController],
   providers: [AppService],

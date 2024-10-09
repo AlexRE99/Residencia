@@ -14,16 +14,26 @@ export class Usuarios {
     /**
      * CREANDO UNA COLUMNA LLAMADA 'nombre' PARA TABLA 'Usuarios'
      */
-    @Column('varchar',{length: 25})
-    nombreUsuario: string;
-    /**
-     * CREANDO UNA COLUMNA LLAMADA 'nombre' PARA TABLA 'Usuarios'
-     */
-    @Column('varchar')
-    password: string;
+    @Column()
+    apPaterno: string;
     /**
      * CREANDO UNA COLUMNA LLAMADA 'nombre' PARA TABLA 'Usuarios'
      */
     @Column()
-    isActive: boolean; 
+    apMaterno: string;
+    /**
+     * CREANDO UNA COLUMNA LLAMADA 'nombre' PARA TABLA 'Usuarios'
+     */
+    @Column()
+    nombre: string; 
+
+    @Column()
+    numEmpleado: number; 
+
+    @Column()
+    extRed: string; 
+
+    @Column()
+    email: string; 
+
 }
