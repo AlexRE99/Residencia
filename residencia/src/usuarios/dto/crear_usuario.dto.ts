@@ -13,6 +13,9 @@ export class CreateUsuarioDto {
     password: string;
 
     isActive: boolean;
+
+    apPaterno: string; 
+    apMaterno: string;
 }
 
 export class UpdateUsuario {

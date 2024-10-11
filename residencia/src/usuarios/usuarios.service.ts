@@ -21,13 +21,13 @@ export class UsuariosService {
     return this.usuariosRepository.save(registro);  
    }
 
-  async login (usuario_login: LoginUsuarioDto) {
-    const { nombreUsuario , password } = usuario_login;
-    const usuario_info = await this.usuariosRepository.findOne({where: {nombreUsuario} } ) // En esta parte preguntamos a la bd por la contrase;a hasheada
-    const pass_compare = await compare(password, usuario_info.password)
-    return pass_compare;
+  // async login (usuario_login: LoginUsuarioDto) {
+  //   const { nombreUsuario , password } = usuario_login;
+  //   const usuario_info = await this.usuariosRepository.findOne({where: {nombreUsuario} } ) // En esta parte preguntamos a la bd por la contrase;a hasheada
+  //   const pass_compare = await compare(password, usuario_info.password)
+  //   return pass_compare;
 
-  }
+  // }
   // actualizar( idUsuario: number, nombre: string  ): Promise<UpdateResult> {
   //   const actualizarUsuario: UpdateUsuario = { nombre }
   //   const registro = this.usuariosRepository.update( idUsuario , actualizarUsuario );

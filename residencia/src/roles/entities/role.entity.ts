@@ -1,16 +1,12 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-
+import { Column, Entity, Index, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Role {
 
     @PrimaryGeneratedColumn()
-    idRoles: number
+    idRol: number
 
     @Column()
+    @Index({unique: true})
     nombre: string
-
-    
 }
-
-

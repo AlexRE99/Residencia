@@ -1,6 +1,8 @@
 //ENCARGADO DE DEFINIR LA ENTIDAD DE LA BDD
 
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Area } from "src/area/entities/area.entity";
+import { Asignacione } from "src/asignaciones/entities/asignacione.entity";
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 /**
  * REPRESENTA LA TABLA 'Usuarios'
  */
@@ -36,4 +38,10 @@ export class Usuarios {
     @Column()
     email: string; 
 
+    @ManyToOne(() => Area, area => area.usuario)
+    @JoinColumn()
+    area: Area;
+
+    @OneToMany( () => Asignacione, usuario_asig => usuario_asig.usuario_asigna)
+    asignacion_usuario: Asignacione[];
 }

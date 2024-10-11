@@ -1,5 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-
+import { Area } from "src/area/entities/area.entity";
+import { Componente } from "src/componentes/entities/componente.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Propiedad {
@@ -42,5 +43,10 @@ export class Propiedad {
 
     @Column()
     cp: number
-}
 
+    @OneToMany( () => Area, area => area.propiedad )
+    area: Area;
+
+    @OneToMany( () => Componente, componente => componente.propiedad )
+    componente: Componente[];
+}

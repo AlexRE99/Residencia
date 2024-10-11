@@ -1,9 +1,11 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Componente } from "src/componentes/entities/componente.entity";
+import { Column, Entity, Index, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 /**
  * Los detalles generales de un componente
  */
 @Entity()
+@Index(["marca", "modelo", "serie"], { unique: true })
 export class DetallesGenerales {
     /**
      * La llave primaria de los detalles generales
@@ -11,8 +13,8 @@ export class DetallesGenerales {
     @PrimaryGeneratedColumn('uuid')
     idDetallesGenerales: string;
     /**
-     * La marca del componente
-     */
+     * La marca del componente 
+     */ 
     @Column()
     marca: string;
     /**
@@ -25,4 +27,9 @@ export class DetallesGenerales {
      */
     @Column()
     serie: string;
+
+    @OneToOne( () => Componente, componente => componente.detalles_generales )
+    @JoinColumn()
+    componente: Componente;
+
 }

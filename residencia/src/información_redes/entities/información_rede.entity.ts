@@ -1,14 +1,19 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Componente } from "src/componentes/entities/componente.entity";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class InformaciónRede {
 
     @PrimaryGeneratedColumn('uuid')
-    idInformacion: string
+    idInformacion: string;
 
     @Column()
-    ip: string
+    ip: string;
 
     @Column()
-    hostname: string
+    hostname: string;
+
+    @OneToOne( () => Componente, componente_informacion => componente_informacion.informacion_componente )
+    @JoinColumn()
+    componente_info: Componente;
 }

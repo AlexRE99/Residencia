@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Componente } from "src/componentes/entities/componente.entity";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class PerfilComponente {
@@ -11,4 +12,7 @@ export class PerfilComponente {
     @Column()
     perfil: string
     
+    @ManyToOne( () => Componente, componente => componente.componente_perfil)
+    @JoinColumn()
+    componente_perfil: Componente;
 }
